@@ -24,7 +24,6 @@ public class PacienteController {
     public void cadastrar(@RequestBody @Valid DadosCadastroPaciente dados){
         repository.save(new Paciente(dados));
     }
-
     @GetMapping
     public Page<DadosListagemPaciente> listar(Pageable paginacao) {
         return repository.findAll(paginacao).map(DadosListagemPaciente::new);

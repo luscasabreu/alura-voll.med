@@ -22,7 +22,7 @@ public class TratadorDeErros {
         return ResponseEntity.badRequest().body(erros.stream().map(DtoErro400::new));
 
     }
-    
+
     private record DtoErro400 (String campo, String erro){
         public DtoErro400(FieldError erro) {
             this(erro.getField(), erro.getDefaultMessage());
